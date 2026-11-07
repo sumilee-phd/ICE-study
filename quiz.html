@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>법규 퀴즈 · ICE-study</title>
+<meta name="description" content="정보통신기사 법규 OX·선택형 퀴즈(근거 조문 포함)">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%231f5fbf%27/%3E%3Ctext x=%2716%27 y=%2721%27 font-size=%2711%27 text-anchor=%27middle%27 fill=%27white%27 font-family=%27sans-serif%27 font-weight=%27700%27%3EICE%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<header class="site"><div class="site-inner">
+  <a class="brand" href="index.html">ICE-study<small>정보통신기사</small></a>
+  <nav class="menu">
+    <a href="index.html">홈</a>
+    <a href="syllabus.html">출제기준 점검표</a>
+    <a href="concepts.html">헷갈리는 개념</a>
+    <a href="quiz.html" aria-current="page">법규 퀴즈</a>
+    <a href="formulas.html">공식 카드</a>
+    <a href="links.html">자료 링크</a>
+  </nav>
+</div></header>
+
+<main>
+  <h1>법규 퀴즈</h1>
+  <p class="lead">정보통신공사업법, 방송통신설비의 기술기준에 관한 규정, 전기통신기본법, 전기통신사업법, 방송통신발전 기본법 등의 현행 조문으로 만든 문제입니다. 답을 누르면 해설과 근거 조문이 나옵니다.</p>
+
+  <div class="toolbar">
+    <button type="button" id="quiz-shuffle" class="primary">순서 섞기</button>
+    <button type="button" id="quiz-wrong">틀린 문제만</button>
+    <button type="button" id="quiz-reset">처음부터</button>
+  </div>
+  <div class="score" id="quiz-score"></div>
+  <div id="quiz" style="margin-top:12px"></div>
+
+  <p class="note">조문은 2026-11-08에 국가법령정보센터 현행본으로 확인했습니다. 법령은 수시로 개정되므로 시험 전에 <a href="links.html">자료 링크</a>의 원문을 다시 확인하십시오.</p>
+</main>
+
+<footer class="site"><div class="site-inner">
+  개인 학습용 정리이며 공식 자료가 아닙니다. 기준일 2026-11-08. 출처: 국가법령정보센터.
+  · <a href="https://github.com/sumilee-phd/ICE-study">GitHub</a>
+</div></footer>
+<script src="assets/quiz.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

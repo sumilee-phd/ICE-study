@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>헷갈리는 개념 · ICE-study</title>
+<meta name="description" content="정보통신기사에서 혼동하기 쉬운 개념 정리">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%231f5fbf%27/%3E%3Ctext x=%2716%27 y=%2721%27 font-size=%2711%27 text-anchor=%27middle%27 fill=%27white%27 font-family=%27sans-serif%27 font-weight=%27700%27%3EICE%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<header class="site"><div class="site-inner">
+  <a class="brand" href="index.html">ICE-study<small>정보통신기사</small></a>
+  <nav class="menu">
+    <a href="index.html">홈</a>
+    <a href="syllabus.html">출제기준 점검표</a>
+    <a href="concepts.html" aria-current="page">헷갈리는 개념</a>
+    <a href="quiz.html">법규 퀴즈</a>
+    <a href="formulas.html">공식 카드</a>
+    <a href="links.html">자료 링크</a>
+  </nav>
+</div></header>
+
+<main>
+  <h1>헷갈리는 개념</h1>
+  <p class="lead">강의·교재마다 설명이 엇갈리거나 비슷한 용어와 섞이기 쉬운 개념입니다. 각 항목의 <span class="wrong">✕</span>는 흔히 섞이는 설명, <span class="right">○</span>는 시험 기준 설명입니다.</p>
+
+  <h2>정보전송일반</h2>
+
+  <div class="concept">
+    <h3>신호 변환 4가지와 이름</h3>
+    <ul>
+      <li>아날로그 → 아날로그: <b>아날로그 변조</b>(AM, FM, PM)</li>
+      <li>아날로그 → 디지털: <b>원천부호화(소스코딩)</b>. 출제기준 표기 「PCM, DPCM, DM, ADPCM, ADM 등 원천부호화」</li>
+      <li>디지털 → 아날로그: <b>디지털 변조</b>(ASK, FSK, PSK, QAM). 모뎀의 기술</li>
+      <li>디지털 → 디지털: <b>라인코드(선로부호)</b>(RZ, NRZ, AMI, 맨체스터 등). DSU의 부호 변환</li>
+    </ul>
+    <p><span class="wrong">✕ 디지털→디지털 변환 = 채널부호화</span> · <span class="right">○ 채널부호는 오류 검출·정정 부호(블록코드, 콘볼루션 코드)이고 출제기준에서도 라인코드와 따로 둡니다.</span></p>
+  </div>
+
+  <div class="concept">
+    <h3>「변조」와 「부호화」라는 말</h3>
+    <p>변환 결과가 아날로그면 「변조」, 디지털이면 「부호화」입니다. 그래서 <span class="right">○ 디지털 변조 = 디지털 데이터를 아날로그 신호로 바꾸는 것</span>이고, <span class="wrong">✕ 「디지털 변조는 결과도 디지털」</span>은 틀립니다.</p>
+  </div>
+
+  <div class="concept">
+    <h3>슈퍼헤테로다인 수신기와 동기·비동기 검파</h3>
+    <ul>
+      <li>슈퍼헤테로다인: 수신 주파수를 국부발진기와 혼합해 일정한 <b>중간주파수</b>(AM 455kHz, FM 10.7MHz)로 바꾼 뒤 증폭·검파하는 수신기 구조. 감도·선택도가 좋고 영상주파수 혼신이 생깁니다.</li>
+      <li>동기(코히어런트) 검파: 수신측에서 반송파를 재생해 곱해서 복조. 비동기 검파: 포락선 검파처럼 반송파 재생 없이 복조.</li>
+    </ul>
+    <p><span class="wrong">✕ 비동기 검파 = 슈퍼헤테로다인</span> · <span class="right">○ 하나는 수신기 구조, 하나는 복조 방식이라 서로 다른 구분입니다.</span></p>
+  </div>
+
+  <div class="concept">
+    <h3>OQPSK를 쓰는 이유</h3>
+    <p><span class="right">○ QPSK의 180° 위상 변화를 없애(I·Q를 반 심볼 어긋나게 전송, 위상 변화 ±90°로 제한) 포락선이 0을 지나지 않게 하고, 대역 제한 뒤 비선형 증폭기에서 스펙트럼이 다시 퍼지는 것을 줄입니다.</span></p>
+    <p><span class="wrong">✕ ISI를 줄이려고, 속도를 두 배로 하려고</span> · 전송 속도·대역폭·비트오율은 QPSK와 같습니다.</p>
+  </div>
+
+  <div class="concept">
+    <h3>FM 변조지수 β</h3>
+    <p>β = Δf / fm. FM 방송은 최대 편이 75kHz, 최고 음향 주파수 15kHz라 β = 5입니다.</p>
+    <p><span class="wrong">✕ FM 변조지수는 항상 1보다 커야 한다</span> · <span class="right">○ β가 1보다 작은 협대역 FM(대역폭 약 2fm)도 있습니다. β가 클수록 대역폭은 넓어지고 S/N은 좋아집니다.</span></p>
+  </div>
+
+  <div class="concept">
+    <h3>DM(델타 변조)의 전송 속도</h3>
+    <p>DM은 표본당 1비트이지만, 경사과부하 잡음을 막으려고 <b>나이퀴스트 속도보다 훨씬 높게 표본화(오버샘플링)</b>합니다. 「8kHz × 1비트 = 8kbps」는 단순화한 계산입니다.</p>
+    <ul>
+      <li>경사과부하 잡음: 신호가 급하게 변해 계단이 따라가지 못할 때</li>
+      <li>그래뉼러(과립) 잡음: 신호 변화가 거의 없을 때 계단이 오르내리며 생김</li>
+      <li>둘을 줄이려고 계단 폭을 신호에 맞춰 바꾸는 것이 ADM·ADPCM</li>
+    </ul>
+  </div>
+
+  <div class="concept">
+    <h3>양자화 잡음과 S/Nq</h3>
+    <p><span class="right">○ 균일(선형) 양자화에서 양자화 잡음 전력은 Δ²/12로 신호 크기와 무관하게 일정합니다.</span> 작은 신호에서 나빠지는 것은 <b>신호 대 양자화 잡음비</b>이고, 그래서 작은 신호를 촘촘하게 나누는 비선형 양자화(압신, μ-law·A-law)를 씁니다.</p>
+    <p>S/Nq ≈ 6.02n + 1.76 dB(정현파 최대 입력 기준). 1비트를 늘리면 약 6dB 좋아집니다.</p>
+  </div>
+
+  <div class="concept">
+    <h3>에일리어싱과 두 가지 나이퀴스트</h3>
+    <ul>
+      <li>표본화 정리: fs ≥ 2fm이면 원신호를 복원할 수 있습니다. 전화는 음성 3.4kHz + 보호대역 → 4kHz, fs = 8kHz, 표본 간격 125μs.</li>
+      <li>에일리어싱: fs가 2fm보다 낮아 표본화된 스펙트럼끼리 겹쳐 생기는 왜곡. 표본화 앞단의 저역통과필터로 막습니다.</li>
+      <li>나이퀴스트 ISI 기준: 대역폭 B인 채널로 부호 간 간섭 없이 보낼 수 있는 최대 심볼률은 2B. 표본화 정리와는 다른 정리입니다.</li>
+    </ul>
+  </div>
+
+  <div class="concept">
+    <h3>광섬유 속 빛의 속도</h3>
+    <p><span class="wrong">✕ 광섬유 속 광신호도 3×10⁸ m/s</span> · <span class="right">○ v = c/n. 코어 굴절률 약 1.5이면 약 2×10⁸ m/s(약 5μs/km)입니다.</span></p>
+  </div>
+
+  <div class="concept">
+    <h3>광섬유 저손실 창</h3>
+    <p>0.85μm, 1.31μm, 1.55μm. 일반 단일모드 광섬유에서 <b>분산 최소는 1.31μm</b>, <b>손실 최소는 1.55μm</b>입니다. 1.55μm에서 분산까지 줄인 것이 분산천이 광섬유입니다. 1.55μm대는 S·C·L 밴드로 나눠 씁니다.</p>
+  </div>
+
+  <div class="concept">
+    <h3>전파와 전자파</h3>
+    <p>「전파법」의 전파는 "인공적인 유도 없이 공간에 퍼져 나가는 전자파로서 국제전기통신연합이 정한 범위의 주파수를 가진 것"입니다(전파규칙 범위 3,000GHz 미만). <span class="right">○ 전파는 전자파의 일부이고 빛도 전자파입니다.</span> <span class="wrong">✕ 전파 = 전자파</span></p>
+  </div>
+
+  <div class="concept">
+    <h3>AM 피변조파 전력</h3>
+    <p>Pt = Pc(1 + m²/2). 반송파 전력은 그대로이고 m이 커질수록 전체 전력이 늘어, m = 1이면 1.5Pc이고 측파대 전력은 전체의 1/3입니다. m > 1이면 과변조(왜곡, 점유 대역폭 증가, 인접 채널 혼신).</p>
+  </div>
+
+  <h2>네트워크·컴퓨터</h2>
+
+  <div class="concept">
+    <h3>OSI 계층과 장비</h3>
+    <ul>
+      <li>1계층(물리): 리피터, 허브, 케이블·커넥터</li>
+      <li>2계층(데이터링크): 브리지, L2 스위치</li>
+      <li>3계층(네트워크): 라우터, L3 스위치</li>
+      <li>4~7계층: 게이트웨이, L4~L7 스위치</li>
+    </ul>
+    <p><span class="wrong">✕ 선로설비 1계층·전송설비 2계층·교환설비 3계층·단말장치 4계층</span>처럼 설비 종류를 계층 번호에 대응시키는 설명은 OSI 문제에 쓰지 않습니다. 단말은 1~7계층을 모두 갖춥니다.</p>
+  </div>
+
+  <h2>법규·설계·감리</h2>
+
+  <div class="concept">
+    <h3>「정보통신설비」의 법 정의</h3>
+    <p>"유선, 무선, 광선, 그 밖의 전자적 방식으로 부호·문자·음향 또는 영상 등의 정보를 저장·제어·처리하거나 송수신하기 위한 기계·기구·선로 및 그 밖에 필요한 설비"(정보통신공사업법 제2조제1호). 법은 종류를 8가지로 열거하지 않습니다. 선로·전송·교환설비, 단말장치, 전원설비는 「방송통신설비의 기술기준에 관한 규정」 제3조에 따로 정의돼 있습니다.</p>
+  </div>
+
+  <div class="concept">
+    <h3>감리의 정의</h3>
+    <p>"공사에 대하여 발주자의 위탁을 받은 용역업자가 설계도서 및 관련 규정의 내용대로 시공되는지를 감독하고, <b>품질관리·시공관리 및 안전관리</b>에 대한 지도 등에 관한 발주자의 권한을 대행하는 것"(정보통신공사업법 제2조제9호). 비용 관리는 정의에 없습니다. 실기 출제기준은 시공관리·공정관리·품질관리·안전관리로 적습니다.</p>
+  </div>
+
+  <div class="concept">
+    <h3>설계도서 5가지</h3>
+    <p>계획서, 설계도면, <b>설계설명서</b>, 공사비명세서, 기술계산서 및 이와 관련된 서류(정보통신공사업법 제2조제8호). 예전 교재의 「시방서」는 「설계설명서」로 바뀌었고, 2026 출제기준도 「설계설명서」로 적습니다.</p>
+  </div>
+
+  <div class="concept">
+    <h3>전원설비의 범위</h3>
+    <p>"수변전장치, 정류기, 축전지, 전원반, 예비용 발전기 및 배선 등 방송통신용 전원을 공급하기 위한 설비"(방송통신설비의 기술기준에 관한 규정 제3조제1항제12호).</p>
+  </div>
+
+  <div class="concept">
+    <h3>바뀐 법률 용어</h3>
+    <ul>
+      <li>「초고속정보통신망」「광대역통합정보통신망」: 폐지된 국가정보화 기본법 용어. 현행 「지능정보화 기본법」(2020-12-10 시행) 제2조제9호는 「초연결지능정보통신망」</li>
+      <li>「정보」 정의: 현행 조문은 "광 또는 전자적 방식으로 처리되는 부호, 문자, 음성, 음향 및 영상 등으로 표현된 모든 종류의 자료 또는 지식"이며 옛 문구의 "특정 목적을 위하여"가 없습니다</li>
+      <li>「초고속정보통신건물 인증」: 2025-12-01 「스마트정보통신건물인증」으로 개편</li>
+      <li>「방송통신위원회」: 방송통신발전 기본법 등에서 2025-10-01 「방송미디어통신위원회」로 변경</li>
+    </ul>
+  </div>
+</main>
+
+<footer class="site"><div class="site-inner">
+  개인 학습용 정리이며 공식 자료가 아닙니다. 기준일 2026-11-08. 법령 문구는 국가법령정보센터 현행 조문 기준입니다.
+  · <a href="https://github.com/sumilee-phd/ICE-study">GitHub</a>
+</div></footer>
+</body>
+</html>
